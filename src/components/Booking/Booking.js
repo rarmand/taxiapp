@@ -2,7 +2,11 @@ import React from "react";
 
 class Booking extends React.Component {
   render() {
-    return <p>Booking part</p>;
+    return (
+      <div className="booking-form">
+        <p>Booking part</p>
+      </div>
+    );
   }
 }
 

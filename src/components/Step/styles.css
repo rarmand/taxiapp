@@ -1,0 +1,12 @@
+.step-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.circle-content {
+  margin-right: 10px;
+}
+.step-info {
+}

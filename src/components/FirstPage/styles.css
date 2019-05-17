@@ -1,0 +1,25 @@
+header {
+  background-color: #3f454d;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  padding-left: 20px;
+  margin: auto;
+  height: 22px;
+}
+
+.margin-div {
+  width: 900px;
+  margin: auto;
+}
+
+.booking-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #3f454d;
+  color: #ffffff;
+}
