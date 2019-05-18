@@ -1,0 +1,182 @@
+.booking-part {
+  width: 500px;
+  margin: 0 50px 50px 50px;
+}
+
+.booking-form {
+  background-color: #ffffff;
+  height: 26px;
+  color: #a8a8a8;
+  border-radius: 4px;
+  margin: 2px 0;
+  padding: 12px 9px;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.booking-form input {
+  border: none;
+  font-size: 20px;
+  color: #3f454d;
+  margin-left: 4px;
+  font-weight: inherit;
+  flex-grow: 2;
+}
+
+.booking-date {
+  width: inherit;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #a8a8a8;
+}
+
+.booking-date-start {
+  height: inherit;
+  width: 363px;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.booking-date-start button,
+.booking-date-end button {
+  height: inherit;
+  border: none;
+  border-radius: inherit;
+  text-decoration: none;
+  background-color: white;
+  padding: 0;
+}
+
+.booking-date-start .calendar-picker {
+  width: 50px;
+}
+.booking-date-start .calendar-picker svg {
+  fill: #ff4800;
+  height: 28px;
+  width: 28px;
+}
+
+.booking-date-start button span {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  width: 90px;
+  margin-left: 10px;
+}
+
+.booking-date-start .date {
+  font-size: 12px;
+}
+
+.booking-date-start .day {
+  font-weight: lighter;
+}
+
+.booking-date-end {
+  width: 135px;
+  height: inherit;
+  background-color: white;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.booking-date-end span {
+  margin: 0 8px;
+}
+
+.booking-date-end button {
+  color: #3f454d;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.booking-more-info {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-more-info button {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  color: #ff4800;
+  font-size: inherit;
+  width: 150px;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.booking-form svg {
+  height: 28px;
+  width: 28px;
+  fill: #ff4800;
+  padding: 0 5px;
+}
+
+.booking-more-info svg {
+  height: 20px;
+  width: 20px;
+  fill: #ff4800;
+  padding: 0 5px;
+}
+
+.booking-button button {
+  width: 100%;
+  height: 60px;
+  background-color: #ff4800;
+  font-size: 26px;
+  font-weight: normal;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.booking-details {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.detail-form {
+  width: 165px;
+  height: 50px;
+  margin: 0 2px 2px 0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.detail-form button {
+  border: none;
+  text-decoration: none;
+  flex-grow: 2;
+  font-size: inherit;
+}
+
+.detail-form .detail-icon {
+  background-color: #d2d6d9;
+  fill: #a8a8a8;
+}
+
+.detail-form svg {
+  height: 50px;
+  width: 28px;
+  fill: #3f454d;
+  padding: 0 10px;
+  border-radius: 4px;
+}
