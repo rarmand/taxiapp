@@ -1,16 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import "./styles.css";
+import { ReactComponent as Arrow } from "../../assets/arrow.svg";
 
-class BookingForm extends React.Component {
+export default class BookingForm extends Component {
   render() {
     return (
       <div className="booking-form">
-        <span>{this.props.title}</span>
+        <span>{this.props.title}:</span>
         <input type="text" name="booking-choice" />
+        <Arrow />
         <span className="booking-menu" />
       </div>
     );
   }
 }
 
-export default BookingForm;
+export class BookingEasyForm extends Component {
+  render() {
+    return (
+      <div className="booking-form">
+        <span>{this.props.title}:</span>
+        <input type="text" name={this.props.name} ref={this.props.ref} />
+        <span className="booking-menu" />
+      </div>
+    );
+  }
+}
+
+export class BookingDateStartButton extends Component {
+  render() {
+    return (
+      <button>
+        <span className="date">{this.props.date}</span>
+        <span className="day">{this.props.day}</span>
+      </button>
+    );
+  }
+}

@@ -1,0 +1,30 @@
+.detail-form {
+  width: 165px;
+  height: 50px;
+  margin: 0 2px 2px 0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.detail-form button {
+  border: none;
+  text-decoration: none;
+  flex-grow: 2;
+  font-size: inherit;
+}
+
+.detail-form .detail-icon {
+  background-color: #d2d6d9;
+  fill: #a8a8a8;
+}
+
+.detail-form svg {
+  height: 50px;
+  width: 28px;
+  fill: #3f454d;
+  padding: 0 10px;
+  border-radius: 4px;
+}

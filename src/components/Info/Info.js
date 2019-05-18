@@ -5,7 +5,7 @@ const info_styles = {
   display: "flex",
   justifyContent: "center",
   flexDirection: "row",
-  padding: "40px"
+  padding: "20px"
 };
 
 class Info extends React.Component {

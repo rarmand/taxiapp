@@ -14,7 +14,15 @@
 .booking-form input {
   border: none;
   font-size: 20px;
-  color: #a8a8a8;
+  color: #3f454d;
   margin-left: 4px;
   font-weight: inherit;
+  flex-grow: 2;
+}
+
+.booking-form svg {
+  height: 28px;
+  width: 28px;
+  fill: #ff4800;
+  padding: 0 5px;
 }
