@@ -7,20 +7,13 @@ export default class BookingForm extends Component {
     return (
       <div className="booking-form">
         <span>{this.props.title}:</span>
-        <input type="text" name="booking-choice" />
-        <Arrow />
-        <span className="booking-menu" />
-      </div>
-    );
-  }
-}
-
-export class BookingEasyForm extends Component {
-  render() {
-    return (
-      <div className="booking-form">
-        <span>{this.props.title}:</span>
-        <input type="text" name={this.props.name} ref={this.props.ref} />
+        <input
+          type="text"
+          name={this.props.name}
+          value={this.props.value}
+          onChange={this.props.onChange}
+        />
+        {this.props.withArrow ? <Arrow /> : null}
         <span className="booking-menu" />
       </div>
     );

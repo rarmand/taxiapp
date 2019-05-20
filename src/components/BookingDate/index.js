@@ -19,7 +19,7 @@ export default class BookingDate extends React.Component {
 
         <div className="booking-date-end">
           <span>do:</span>
-          <button>22:05</button>
+          <button>{this.props.hour}</button>
         </div>
       </div>
     );

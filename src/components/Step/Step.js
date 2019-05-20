@@ -23,7 +23,7 @@ class Step extends React.Component {
           </svg>
         </div>
         <div className="step-title">
-          <snap>{this.props.title}</snap>
+          <span>{this.props.title}</span>
         </div>
       </div>
     );
