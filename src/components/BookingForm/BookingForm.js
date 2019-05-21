@@ -19,14 +19,3 @@ export default class BookingForm extends Component {
     );
   }
 }
-
-export class BookingDateStartButton extends Component {
-  render() {
-    return (
-      <button>
-        <span className="date">{this.props.date}</span>
-        <span className="day">{this.props.day}</span>
-      </button>
-    );
-  }
-}

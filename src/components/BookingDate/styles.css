@@ -7,7 +7,7 @@
   color: #a8a8a8;
 }
 
-.booking-date-start {
+.booking-date-day {
   height: inherit;
   width: 363px;
   background-color: white;
@@ -16,8 +16,8 @@
   justify-content: flex-end;
 }
 
-.booking-date-start button,
-.booking-date-end button {
+.booking-date-day button,
+.booking-hour button {
   height: inherit;
   border: none;
   border-radius: inherit;
@@ -26,16 +26,25 @@
   padding: 0;
 }
 
-.booking-date-start .calendar-picker {
+.booking-date-day .calendar-picker {
   width: 50px;
 }
-.booking-date-start .calendar-picker svg {
+.booking-date-day .calendar-picker svg {
   fill: #ff4800;
   height: 28px;
   width: 28px;
 }
 
-.booking-date-start button span {
+.calendar-hidden {
+  display: none;
+}
+
+.calendar-shown {
+  background-color: white;
+  position: absolute;
+}
+
+.booking-date-day button span {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -44,15 +53,15 @@
   margin-left: 10px;
 }
 
-.booking-date-start .date {
+.booking-date-day .date {
   font-size: 12px;
 }
 
-.booking-date-start .day {
+.booking-date-day .day {
   font-weight: lighter;
 }
 
-.booking-date-end {
+.booking-hour {
   width: 135px;
   height: inherit;
   background-color: white;
@@ -60,11 +69,11 @@
   font-size: 20px;
 }
 
-.booking-date-end span {
+.booking-hour span {
   margin: 0 8px;
 }
 
-.booking-date-end button {
+.booking-hour button {
   color: #3f454d;
   font-size: 20px;
   font-weight: lighter;

@@ -9,8 +9,8 @@ export default class Booking extends Component {
   state = {
     pickup: "",
     destination: "",
-    date: "",
-    hour: "",
+    date: new Date().toString(),
+    hour: new Date().toString(),
     voucher: "",
     people: "2",
     bags: "2",
@@ -20,12 +20,16 @@ export default class Booking extends Component {
     moreOptsShown: false
   };
 
-  onChange = name => event => {
+  onInputChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
 
   onDetailChange = name => selectedOption => {
     this.setState({ [name]: selectedOption });
+  };
+
+  onDateChange = date => selectedDays => {
+    this.setState({ [date]: selectedDays });
   };
 
   onClick = event => {
@@ -35,7 +39,6 @@ export default class Booking extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    alert("Looks good");
   };
 
   render() {
@@ -61,19 +64,25 @@ export default class Booking extends Component {
               title={"Odbiór"}
               value={pickup}
               withArrow={true}
-              onChange={this.onChange("pickup")}
+              onChange={this.onInputChange("pickup")}
             />
             <BookingForm
               title={"Cel"}
               value={destination}
-              onChange={this.onChange("destination")}
+              onChange={this.onInputChange("destination")}
               withArrow={true}
             />
-            <BookingDate date={date} hour={hour} />
+            <BookingDate
+              onDateChange={this.onDateChange("date")}
+              date={date}
+              day={date.weekday}
+              hour={hour}
+            />
+
             <BookingForm
               title={"Kod rabatowy"}
               value={voucher}
-              onChange={this.onChange("voucher")}
+              onChange={this.onInputChange("voucher")}
             />
           </div>
 
