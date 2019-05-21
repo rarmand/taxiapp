@@ -23,7 +23,7 @@ export default class BookingDate extends React.Component {
   };
 
   onDateClicked = date => {
-    alert(date);
+    this.setState({ chosenDate: date });
   };
 
   render() {
@@ -45,17 +45,17 @@ export default class BookingDate extends React.Component {
       <div className="booking-date">
         <div className="booking-date-day">
           <BookingDateButton
-            isChosen={this.chosenDate}
+            chosenDate={this.state.chosenDate}
             onClick={this.onDateClicked}
             date={dayBefore}
           />
           <BookingDateButton
-            isChosen={this.chosenDate}
+            chosenDate={this.state.chosenDate}
             onClick={this.onDateClicked}
             date={this.props.date}
           />
           <BookingDateButton
-            isChosen={this.chosenDate}
+            chosenDate={this.state.chosenDate}
             onClick={this.onDateClicked}
             date={dayAfter}
           />
@@ -98,9 +98,12 @@ export class BookingDateButton extends React.Component {
     const date = new Date(this.props.date);
     return (
       <button
-        onClick={this.props.onClick}
+        type="button"
+        onClick={e => {
+          this.props.onClick(date);
+        }}
         style={
-          this.props.isChosen === date
+          this.props.chosenDate.toString() === date.toString()
             ? { color: "#ff4800" }
             : { color: "#3f454d" }
         }

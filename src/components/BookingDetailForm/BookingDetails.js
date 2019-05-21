@@ -1,6 +1,15 @@
 import React from "react";
 import Select from "react-select";
 
+const detailStyles = {
+  control: styles => ({
+    ...styles,
+    width: "164px",
+    height: "48px",
+    margin: "0 2px 2px 0"
+  })
+};
+
 export default class BookingDetailForm extends React.Component {
   onChange = ({ value }) => this.props.onChange(value);
 
@@ -13,6 +22,7 @@ export default class BookingDetailForm extends React.Component {
           options={this.props.options.map(value => {
             return { label: value, value };
           })}
+          styles={detailStyles}
         />
       </div>
     );
