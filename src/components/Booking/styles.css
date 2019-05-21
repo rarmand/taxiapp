@@ -1,3 +1,8 @@
+.booking {
+  display: flex;
+  flex-direction: row;
+}
+
 .booking-part {
   width: 500px;
   margin: 0 50px 50px 50px;

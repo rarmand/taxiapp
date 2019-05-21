@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import logo from "../../assets/talixo_logo_2x.png";
 import Booking from "../Booking/Booking";
-import Info from "../Info/Info";
+import Steps from "../Steps";
 
 class FirstPage extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class FirstPage extends React.Component {
         </header>
 
         <div className="margin-div booking-info">
-          <Info />
+          <Steps />
           <Booking />
         </div>
       </div>

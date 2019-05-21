@@ -1,0 +1,16 @@
+.info-part {
+  flex: 1;
+  margin: 0 50px 50px 0;
+  padding: 4px 10px;
+  color: #d2d6d9;
+  font-size: 14px;
+  background-color: #1e2731;
+  border-radius: 4px;
+}
+
+.info-part span {
+  font-weight: normal;
+}
+.info-none {
+  display: none;
+}

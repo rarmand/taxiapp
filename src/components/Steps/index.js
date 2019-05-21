@@ -8,7 +8,7 @@ const info_styles = {
   padding: "20px"
 };
 
-class Info extends React.Component {
+class Steps extends React.Component {
   render() {
     return (
       <div className="steps-content" style={info_styles}>
@@ -35,4 +35,4 @@ class Info extends React.Component {
   }
 }
 
-export default Info;
+export default Steps;

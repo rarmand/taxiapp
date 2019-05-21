@@ -4,13 +4,25 @@ import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import MomentLocaleUtils from "react-day-picker/moment";
 import "./styles.css";
-import "moment/locale/pl";
+import Select from "react-select";
+import BookingDateButton from "../BookingDateButton";
 
 export default class BookingDate extends React.Component {
   state = {
     calendarShown: false,
     chosenDate: ""
   };
+
+  options = [
+    "9:00",
+    "12:00",
+    "15:00",
+    "18:00",
+    "21:00",
+    "0:00",
+    "3:00",
+    "6:00"
+  ];
 
   onClickCalendar = event => {
     event.preventDefault();
@@ -26,20 +38,14 @@ export default class BookingDate extends React.Component {
     this.setState({ chosenDate: date });
   };
 
+  onHourChange = ({ value }) => this.props.onHourChange(value);
+
   render() {
     let dayBefore = new Date(this.props.date);
     dayBefore.setDate(dayBefore.getDate() - 1).toString();
 
     let dayAfter = new Date(this.props.date);
     dayAfter.setDate(dayAfter.getDate() + 1).toString();
-
-    const hour = new Date(this.props.hour).toLocaleTimeString(
-      "pl-PL-u-ca-iso8601",
-      {
-        hour: "2-digit",
-        minute: "2-digit"
-      }
-    );
 
     return (
       <div className="booking-date">
@@ -74,48 +80,24 @@ export default class BookingDate extends React.Component {
           />
         </div>
 
-        <div className="booking-hour">
-          <span>do:</span>
-          <button>{hour}</button>
-        </div>
+        <Select
+          value={{ label: this.props.hour, value: this.props.hour }}
+          styles={detailStyles}
+          options={this.options.map(value => {
+            return { label: value, value };
+          })}
+          onChange={this.onHourChange}
+        />
       </div>
     );
   }
 }
 
-export class BookingDateButton extends React.Component {
-  week = [
-    "Niedziela",
-    "Poniedziałek",
-    "Wtorek",
-    "Środa",
-    "Czwartek",
-    "Piątek",
-    "Sobota"
-  ];
-
-  render() {
-    const date = new Date(this.props.date);
-    return (
-      <button
-        type="button"
-        onClick={e => {
-          this.props.onClick(date);
-        }}
-        style={
-          this.props.chosenDate.toString() === date.toString()
-            ? { color: "#ff4800" }
-            : { color: "#3f454d" }
-        }
-      >
-        <span className="date">
-          {date.toLocaleDateString("pl-PL-u-ca-iso8601", {
-            day: "2-digit",
-            month: "2-digit"
-          })}
-        </span>
-        <span className="day">{this.week[date.getDay()]}</span>
-      </button>
-    );
-  }
-}
+const detailStyles = {
+  control: styles => ({
+    ...styles,
+    width: "136px",
+    height: "50px",
+    margin: "0 0 2px 2px"
+  })
+};

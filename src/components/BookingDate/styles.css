@@ -24,6 +24,7 @@
   text-decoration: none;
   background-color: white;
   padding: 0;
+  color: #3f454d;
 }
 
 .booking-date-day .calendar-picker {
@@ -67,6 +68,8 @@
   background-color: white;
   border-radius: 4px;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .booking-hour span {
