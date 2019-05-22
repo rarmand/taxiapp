@@ -2,11 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
 ## Download Project
 
 In chosen directory download the project from github or in terminal use the command:
 
 ### `git clone <<< project's address >>>` 
+
+
 
 ## Download Packages
 
@@ -22,7 +26,7 @@ or
 
 
 
-## Available Scripts
+## Run project
 
 In the project directory, you can run:
 
