@@ -14,16 +14,15 @@ export default class BookingDateButton extends React.Component {
 
   render() {
     const date = new Date(this.props.date);
+
     return (
       <button
         type="button"
         onClick={e => {
-          this.props.onClick(date);
+          this.props.onClick(date.toString());
         }}
         style={
-          this.props.chosenDate.toString() === date.toString()
-            ? { color: "#ff4800" }
-            : { color: "#3f454d" }
+          this.props.isHighlighted ? { color: "#ff4800" } : { color: "#3f454d" }
         }
       >
         <span className="date">

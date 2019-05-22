@@ -12,6 +12,7 @@ export default class BookingForm extends Component {
           name={this.props.name}
           value={this.props.value}
           onChange={this.props.onChange}
+          required={this.props.required}
         />
         {this.props.withArrow ? <Arrow /> : null}
         <span className="booking-menu" />

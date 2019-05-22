@@ -5,16 +5,14 @@ import BookingDate from "../BookingDate";
 import { ReactComponent as Arrow } from "../../assets/arrow.svg";
 import "./styles.css";
 import Info from "../Info";
+import moment from "moment";
 
 export default class Booking extends Component {
   state = {
     pickup: "",
     destination: "",
     date: new Date().toString(),
-    hour: new Date().toLocaleTimeString("pl-PL-u-ca-iso8601", {
-      hour: "2-digit",
-      minute: "2-digit"
-    }),
+    hour: moment().format("HH:mm"),
     voucher: "",
     people: "2",
     bags: "2",
@@ -29,16 +27,8 @@ export default class Booking extends Component {
     this.setState({ [name]: event.target.value });
   };
 
-  onDetailChange = name => selectedOption => {
-    this.setState({ [name]: selectedOption });
-  };
-
-  onDateChange = date => selectedDays => {
-    this.setState({ [date]: selectedDays });
-  };
-
-  onHourChange = hour => selectedOption => {
-    this.setState({ [hour]: selectedOption });
+  onDataChange = key => value => {
+    this.setState({ [key]: value });
   };
 
   onClick = event => {
@@ -75,6 +65,7 @@ export default class Booking extends Component {
                 title={"Odbiór"}
                 value={pickup}
                 withArrow={true}
+                required={true}
                 onChange={this.onInputChange("pickup")}
               />
               <BookingForm
@@ -82,12 +73,12 @@ export default class Booking extends Component {
                 value={destination}
                 onChange={this.onInputChange("destination")}
                 withArrow={true}
+                required={true}
               />
               <BookingDate
-                onDateChange={this.onDateChange("date")}
-                onHourChange={this.onHourChange("hour")}
+                onDateChange={this.onDataChange("date")}
+                onHourChange={this.onDataChange("hour")}
                 date={date}
-                day={date.weekday}
                 hour={hour}
               />
 
@@ -95,6 +86,7 @@ export default class Booking extends Component {
                 title={"Kod rabatowy"}
                 value={voucher}
                 onChange={this.onInputChange("voucher")}
+                required={false}
               />
             </div>
 
@@ -115,27 +107,27 @@ export default class Booking extends Component {
               <BookingDetailForm
                 value={people}
                 options={["1", "2", "3", "4", "5"]}
-                onChange={this.onDetailChange("people")}
+                onChange={this.onDataChange("people")}
               />
               <BookingDetailForm
                 value={bags}
                 options={["1", "2", "3", "4"]}
-                onChange={this.onDetailChange("people")}
+                onChange={this.onDataChange("people")}
               />
               <BookingDetailForm
                 value={equip}
                 options={["1", "2", "3"]}
-                onChange={this.onDetailChange("equip")}
+                onChange={this.onDataChange("equip")}
               />
               <BookingDetailForm
                 value={pets}
                 options={["1", "2", "3", "4"]}
-                onChange={this.onDetailChange("pets")}
+                onChange={this.onDataChange("pets")}
               />
               <BookingDetailForm
                 value={kids}
                 options={["1", "2"]}
-                onChange={this.onDetailChange("kids")}
+                onChange={this.onDataChange("kids")}
               />
             </div>
 

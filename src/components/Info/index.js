@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
+import moment from "moment";
 
 export default class Info extends Component {
   render() {
@@ -10,13 +11,14 @@ export default class Info extends Component {
         }
       >
         <p>
-          <span>Od:</span> {this.props.bookingState.pickup}
+          <span>Odbiór:</span> {this.props.bookingState.pickup}
         </p>
         <p>
           <span>Cel:</span> {this.props.bookingState.destination}
         </p>
         <p>
-          <span>Data:</span> {this.props.bookingState.date}
+          <span>Data:</span>{" "}
+          {moment(this.props.bookingState.date).format("DD-MM-YYYY")}
         </p>
         <p>
           <span>Godzina:</span> {this.props.bookingState.hour}

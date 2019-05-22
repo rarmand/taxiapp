@@ -10,7 +10,9 @@ import BookingDateButton from "../BookingDateButton";
 export default class BookingDate extends React.Component {
   state = {
     calendarShown: false,
-    chosenDate: ""
+    chosenDate: new Date().toString(),
+    dayBefore: new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toString(),
+    dayAfter: new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toString()
   };
 
   options = [
@@ -30,40 +32,35 @@ export default class BookingDate extends React.Component {
   };
 
   handleDayClick = day => {
-    this.props.onDateChange(day);
-    this.setState({ calendarShown: !this.state.calendarShown });
-  };
-
-  onDateClicked = date => {
-    this.setState({ chosenDate: date });
+    this.props.onDateChange(day.toString());
+    this.setState({
+      calendarShown: !this.state.calendarShown,
+      chosenDate: day.toString(),
+      dayBefore: new Date(day.getTime() - 24 * 60 * 60 * 1000).toString(),
+      dayAfter: new Date(day.getTime() + 24 * 60 * 60 * 1000).toString()
+    });
   };
 
   onHourChange = ({ value }) => this.props.onHourChange(value);
 
   render() {
-    let dayBefore = new Date(this.props.date);
-    dayBefore.setDate(dayBefore.getDate() - 1).toString();
-
-    let dayAfter = new Date(this.props.date);
-    dayAfter.setDate(dayAfter.getDate() + 1).toString();
-
     return (
       <div className="booking-date">
         <div className="booking-date-day">
           <BookingDateButton
-            chosenDate={this.state.chosenDate}
-            onClick={this.onDateClicked}
-            date={dayBefore}
+            isHighlighted={this.props.date === this.state.dayBefore}
+            onClick={this.props.onDateChange}
+            date={this.state.dayBefore}
           />
           <BookingDateButton
-            chosenDate={this.state.chosenDate}
-            onClick={this.onDateClicked}
-            date={this.props.date}
+            isHighlighted={this.props.date === this.state.chosenDate}
+            onClick={this.props.onDateChange}
+            date={this.state.chosenDate}
           />
           <BookingDateButton
-            chosenDate={this.state.chosenDate}
-            onClick={this.onDateClicked}
-            date={dayAfter}
+            isHighlighted={this.props.date === this.state.dayAfter}
+            onClick={this.props.onDateChange}
+            date={this.state.dayAfter}
           />
 
           <button onClick={this.onClickCalendar} className="calendar-picker">
@@ -75,7 +72,7 @@ export default class BookingDate extends React.Component {
             }
             localeUtils={MomentLocaleUtils}
             locale="pl"
-            selectedDays={this.state.date}
+            selectedDays={new Date(this.state.chosenDate)}
             onDayClick={this.handleDayClick}
           />
         </div>
@@ -93,6 +90,7 @@ export default class BookingDate extends React.Component {
   }
 }
 
+// styles for Select Hour button
 const detailStyles = {
   control: styles => ({
     ...styles,
