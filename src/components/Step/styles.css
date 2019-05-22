@@ -1,0 +1,10 @@
+.step-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.step-number {
+  margin-right: 10px;
+}

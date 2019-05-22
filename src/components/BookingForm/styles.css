@@ -1,0 +1,28 @@
+.booking-form {
+  background-color: #ffffff;
+  height: 26px;
+  color: #a8a8a8;
+  border-radius: 4px;
+  margin: 2px 0;
+  padding: 12px 9px;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.booking-form input {
+  border: none;
+  font-size: 20px;
+  color: #3f454d;
+  margin-left: 4px;
+  font-weight: inherit;
+  flex-grow: 2;
+}
+
+.booking-form svg {
+  height: 28px;
+  width: 28px;
+  fill: #ff4800;
+  padding: 0 5px;
+}

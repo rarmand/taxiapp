@@ -1,13 +1,8 @@
-import React from 'react';
-//import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FirstPage from "./components/FirstPage/FirstPage";
 
 function App() {
-  return ( < div className = "App" >
-    <
-    p > Some application < /p>   < /
-    div >
-  );
+  return <FirstPage />;
 }
 
 export default App;
